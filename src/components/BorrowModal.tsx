@@ -2,7 +2,7 @@ import { ethers } from 'ethers';
 import { Alert, Modal, Button } from 'react-bootstrap';
 import { useState } from 'react';
 import { Listing } from "../utils/common";
-import { NFTInuContract } from "../utils/abiManager"
+import { KasuContract } from "../utils/abiManager"
 
 interface Props {
     listing: Listing,
@@ -22,7 +22,7 @@ function BorrowModal(props: Props) {
     const paymentAmount = calculatePayment(props.listing);
 
     const didClickBorrowButton = () => {
-        const contract = NFTInuContract();
+        const contract = KasuContract();
         setShouldDisableBorrowButton(true);
         setError(null);
 

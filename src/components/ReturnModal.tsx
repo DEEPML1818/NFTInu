@@ -2,7 +2,7 @@ import { ethers } from 'ethers';
 import { Alert, Modal, Button } from 'react-bootstrap';
 import { useCallback, useState } from 'react';
 import { Listing } from "../utils/common";
-import { NFTInuContract } from "../utils/abiManager"
+import { KasuContract } from "../utils/abiManager"
 import { ApprovalChecker, ApprovalState } from './ApprovalChecker';
 
 interface Props {
@@ -42,7 +42,7 @@ function ReturnModal(props: Props) {
         setTransactionSubmitted(true);
         setError(null);
 
-        const contract = NFTInuContract();
+        const contract = KasuContract();
         contract.returnNFT(props.listing.id)
             .then((response: any) => {
                 console.log("response", response);

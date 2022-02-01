@@ -2,7 +2,7 @@ import { Modal, Button, Form, InputGroup, FormControl } from 'react-bootstrap';
 import React, { useState, useRef, useCallback } from 'react';
 import { ToastContainer, toast } from "react-toastify";
 
-import { NFTInuContract, getLoginServiceProvider } from '../utils/abiManager';
+import { KasuContract, getLoginServiceProvider } from '../utils/abiManager';
 import { ethers } from 'ethers';
 import { ApprovalChecker, ApprovalState } from './ApprovalChecker';
 
@@ -39,7 +39,7 @@ function CreateListingModal(props: Props) {
 
     const didClickListNFTButton = () => {
         setTransactionSubmitted(true);
-        const contract = NFTInuContract();
+        const contract = KasuContract();
         try {
             contract.listNFT(
                 props.tokenID,
