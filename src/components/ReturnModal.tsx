@@ -2,7 +2,7 @@ import { ethers } from 'ethers';
 import { Alert, Modal, Button } from 'react-bootstrap';
 import { useCallback, useState } from 'react';
 import { Listing } from "../utils/common";
-import { KasuContract } from "../utils/abiManager"
+import { NFTInuContract } from "../utils/abiManager"
 import { ApprovalChecker, ApprovalState } from './ApprovalChecker';
 
 interface Props {
@@ -42,7 +42,7 @@ function ReturnModal(props: Props) {
         setTransactionSubmitted(true);
         setError(null);
 
-        const contract = KasuContract();
+        const contract = NFTInuContract();
         contract.returnNFT(props.listing.id)
             .then((response: any) => {
                 console.log("response", response);
@@ -76,9 +76,9 @@ function ReturnModal(props: Props) {
                     <Modal.Title>Return NFT</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <p>You will be refunded {ethers.utils.formatEther(paymentBreakdown.collateral)} ETH of collateral.</p>
-                    <p>The lender will be paid {ethers.utils.formatEther(paymentBreakdown.interestPaid)} ETH of interest.</p>
-                    <p>You will be refunded {ethers.utils.formatEther(paymentBreakdown.interestRefunded)} ETH for the interest for the remaining period.</p>
+                    <p>You will be refunded {ethers.utils.formatEther(paymentBreakdown.collateral)} AVAX of collateral.</p>
+                    <p>The lender will be paid {ethers.utils.formatEther(paymentBreakdown.interestPaid)} AVAX of interest.</p>
+                    <p>You will be refunded {ethers.utils.formatEther(paymentBreakdown.interestRefunded)} AVAX for the interest for the remaining period.</p>
                     <ApprovalChecker verb="return"
                         tokenID={props.listing.tokenId}
                         tokenAddress={props.listing.tokenAddress}

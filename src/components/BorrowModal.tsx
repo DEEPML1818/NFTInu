@@ -2,7 +2,7 @@ import { ethers } from 'ethers';
 import { Alert, Modal, Button } from 'react-bootstrap';
 import { useState } from 'react';
 import { Listing } from "../utils/common";
-import { KasuContract } from "../utils/abiManager"
+import { NFTInuContract } from "../utils/abiManager"
 
 interface Props {
     listing: Listing,
@@ -22,7 +22,7 @@ function BorrowModal(props: Props) {
     const paymentAmount = calculatePayment(props.listing);
 
     const didClickBorrowButton = () => {
-        const contract = KasuContract();
+        const contract = NFTInuContract();
         setShouldDisableBorrowButton(true);
         setError(null);
 
@@ -55,7 +55,7 @@ function BorrowModal(props: Props) {
                     <Modal.Title>List NFT for Lending</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    Total payment is {ethers.utils.formatEther(paymentAmount)} ETH.
+                    Total payment is {ethers.utils.formatEther(paymentAmount)} AVAX.
                     {errorMessage}
                 </Modal.Body>
                 <Modal.Footer>

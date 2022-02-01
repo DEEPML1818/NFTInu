@@ -2,7 +2,7 @@ import { Modal, Button, Form, InputGroup, FormControl } from 'react-bootstrap';
 import React, { useState, useRef, useCallback } from 'react';
 import { ToastContainer, toast } from "react-toastify";
 
-import { KasuContract, getLoginServiceProvider } from '../utils/abiManager';
+import { NFTInuContract, getLoginServiceProvider } from '../utils/abiManager';
 import { ethers } from 'ethers';
 import { ApprovalChecker, ApprovalState } from './ApprovalChecker';
 
@@ -39,7 +39,7 @@ function CreateListingModal(props: Props) {
 
     const didClickListNFTButton = () => {
         setTransactionSubmitted(true);
-        const contract = KasuContract();
+        const contract = NFTInuContract();
         try {
             contract.listNFT(
                 props.tokenID,
@@ -133,7 +133,7 @@ function CreateListingModal(props: Props) {
                                     onChange={handleFormValueChange}
                                     aria-label="Collateral Required"
                                     aria-describedby="basic-addon2"/>
-                                <InputGroup.Text id="basic-addon2">ETH</InputGroup.Text>
+                                <InputGroup.Text id="basic-addon2">AVAXS</InputGroup.Text>
                             </InputGroup>
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formRentalDuration">

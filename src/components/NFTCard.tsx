@@ -56,7 +56,7 @@ function NFTCard(props: NFTDisplayable) {
                 <Card.Title>{props.contractName}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">{props.name}</Card.Subtitle>
                 <ListGroup className="list-group-flush" style={styles.listGroupContainer}>
-                    {props.collateral && <ListGroupItem style={styles.listGroupItem}>Collateral: {props.collateral.toString()} ETH</ListGroupItem>}
+                    {props.collateral && <ListGroupItem style={styles.listGroupItem}>Collateral: {props.collateral.toString()} AVAX</ListGroupItem>}
                     {props.interestRate && <ListGroupItem style={styles.listGroupItem}>Interest: {props.interestRate.toString()}%</ListGroupItem>}
                     {props.rentalDuration && <ListGroupItem style={styles.listGroupItem}>Duration: {props.rentalDuration.toString()} days</ListGroupItem>}
                     {props.rentedAtDate && <ListGroupItem style={styles.listGroupItem}>Rented on: {props.rentedAtDate}</ListGroupItem>}
