@@ -30,7 +30,7 @@ const Header = () => {
 
   return (
     <header className="flex justify-between items-center py-4 border-b border-gray-700 bg-gray-900 text-white">
-      <div className="text-xl font-bold">NFT Rental</div>
+      <div className="text-xl font-bold">NFTInu</div>
       <nav className="space-x-4 flex items-center">
         <a href="/rent" className="hover:text-blue-300">Rent</a>
         <a href="/lease" className="hover:text-blue-300">Lease</a>
