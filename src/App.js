@@ -1,39 +1,19 @@
-import Login from './components/Login';
-import { NavLink, Outlet } from "react-router-dom";
-import { Container, Navbar, Nav } from 'react-bootstrap';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import RentPage from './pages/Rent/RentPage';
+import LeasePage from './pages/Lease/LeasePage';
+import DashboardPage from './pages/Dashboard/DashboardPage';
 
 function App() {
-
   return (
-    <Container>
-      <Navbar bg="light" expand="lg">
-        <Container>
-          <Navbar.Brand>
-            <img
-              alt=""
-              src="/katsu.png"
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-            />
-            { ' ' }NFTInu
-          </Navbar.Brand>
-          <Nav className="me-auto">
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/">Browse</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/lend">Lend</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/return">Return</NavLink>
-            </li>
-          </Nav>
-          <Login/>
-        </Container>
-      </Navbar>
-      <Outlet/>
-    </Container>
+    <Router>
+      <Routes>
+        <Route path="/rent" element={<RentPage />} />
+        <Route path="/lease" element={<LeasePage />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/" element={<RentPage />} />
+      </Routes>
+    </Router>
   );
 }
 
